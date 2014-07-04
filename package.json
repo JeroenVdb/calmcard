@@ -1,6 +1,6 @@
 {
   "name": "calmcard",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "not-so-wild wildcard string matching",
   "main": "calmcard.js",
   "directories": {
@@ -17,7 +17,8 @@
     "wildcard",
     "matching",
     "pattern",
-    "string"
+    "string",
+    "glob"
   ],
   "author": {
       "name": "Leon Weidauer",
