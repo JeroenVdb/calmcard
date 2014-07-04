@@ -1,0 +1,31 @@
+{
+  "name": "calmcard",
+  "version": "0.0.0",
+  "description": "not-so-wild wildcard string matching",
+  "main": "calmcard.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "nodeunit ./test/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:lnwdr/calmcard.git"
+  },
+  "keywords": [
+    "wildcard",
+    "matching",
+    "pattern",
+    "string"
+  ],
+  "author": "Leon Weidauer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lnwdr/calmcard/issues"
+  },
+  "homepage": "https://github.com/lnwdr/calmcard",
+  "devDependencies": {
+    "nodeunit": "^0.9.0"
+  }
+}
