@@ -1,6 +1,6 @@
 {
   "name": "calmcard",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "not-so-wild wildcard string matching",
   "main": "calmcard.js",
   "directories": {
@@ -19,7 +19,11 @@
     "pattern",
     "string"
   ],
-  "author": "Leon Weidauer",
+  "author": {
+      "name": "Leon Weidauer",
+      "email": "leon@lnwdr.de",
+      "url": "http://lnwdr.de"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/lnwdr/calmcard/issues"
