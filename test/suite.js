@@ -99,5 +99,89 @@ module.exports = {
         test.strictEqual(calmcard(pattern, "123foo456*789bar0"), true);
         test.strictEqual(calmcard(pattern, "123foo45\\*789bar"), false);
         test.done();
+    },
+
+    testSingleJoker: function(test) {
+        test.expect(2);
+
+        var pattern = "foo?bar";
+        var correct = "fooZbar";
+        var incorrect = "fooZZbar";
+
+        test.strictEqual(calmcard(pattern, correct), true);
+        test.strictEqual(calmcard(pattern, incorrect), false);
+        test.done();
+    },
+
+    testMultipleJokers: function(test) {
+        test.expect(2);
+
+        var pattern = "foo?bar?foo";
+        var correct = "fooZbarZfoo";
+        var incorrect = "fooZbarZZfoo";
+
+        test.strictEqual(calmcard(pattern, correct), true);
+        test.strictEqual(calmcard(pattern, incorrect), false);
+        test.done();
+    },
+
+    testJokerAtBeginning: function(test) {
+        test.expect(2);
+
+        var pattern = "?foobar";
+        var correct = "Zfoobar";
+        var incorrect = "foobar";
+
+        test.strictEqual(calmcard(pattern, correct), true);
+        test.strictEqual(calmcard(pattern, incorrect), false);
+        test.done();
+    },
+
+    testJokerAtEnd: function(test) {
+        test.expect(2);
+
+        var pattern = "foobar?";
+        var correct = "foobarZ";
+        var incorrect = "foobarZZ";
+
+        test.strictEqual(calmcard(pattern, correct), true);
+        test.strictEqual(calmcard(pattern, incorrect), false);
+        test.done();
+    },
+
+    // testJokerAtBeginningAndEnd: function(test) {
+    //     test.expect(2);
+
+    //     var pattern = "?foobar?";
+    //     var correct = "ZfoobarZ";
+    //     var incorrect = "foobarZZ";
+
+    //     test.strictEqual(calmcard(pattern, correct), true);
+    //     test.strictEqual(calmcard(pattern, incorrect), false);
+    //     test.done();
+    // },
+
+    testJokerMustRepresentACharacter: function(test) {
+        test.expect(2);
+
+        var pattern = "foo?bar";
+        var correct = "fooZbar";
+        var incorrect = "foobar";
+
+        test.strictEqual(calmcard(pattern, correct), true);
+        test.strictEqual(calmcard(pattern, incorrect), false);
+        test.done();
+    },
+
+    testMultipleSequentialJokers: function(test) {
+        test.expect(2);
+
+        var pattern = "foo??bar";
+        var correct = "fooZZbar";
+        var incorrect = "fooZbar";
+
+        test.strictEqual(calmcard(pattern, correct), true);
+        test.strictEqual(calmcard(pattern, incorrect), false);
+        test.done();
     }
 }
