@@ -149,17 +149,17 @@ module.exports = {
         test.done();
     },
 
-    // testJokerAtBeginningAndEnd: function(test) {
-    //     test.expect(2);
+    testJokerAtBeginningAndEnd: function(test) {
+        test.expect(2);
 
-    //     var pattern = "?foobar?";
-    //     var correct = "ZfoobarZ";
-    //     var incorrect = "foobarZZ";
+        var pattern = "?foobar?";
+        var correct = "ZfoobarZ";
+        var incorrect = "foobarZZ";
 
-    //     test.strictEqual(calmcard(pattern, correct), true);
-    //     test.strictEqual(calmcard(pattern, incorrect), false);
-    //     test.done();
-    // },
+        test.strictEqual(calmcard(pattern, correct), true);
+        test.strictEqual(calmcard(pattern, incorrect), false);
+        test.done();
+    },
 
     testJokerMustRepresentACharacter: function(test) {
         test.expect(2);
