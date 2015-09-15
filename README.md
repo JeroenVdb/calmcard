@@ -3,8 +3,11 @@ calmcard
 
 **not-so-wild wildcard string matching**
 
-Calmcard provides a simple string pattern matching with `*` as the only special character which is a placeholder for
-any sequence of characters, unless it is escaped.
+Calmcard provides a simple string pattern matching with `*` and `?`.
+
+`*` is a placeholder for any sequence of characters, unless it is escaped.
+
+`?` is a placeholder for a single character.
 
 Calmcard was made to have a `glob` like tool for arbitrary strings where slashes have no special meaning. It also does
 explicitly not use regular expressions because of speed, proper escaping and because writing regular expression strings
@@ -28,4 +31,8 @@ Currently, calmcard is built for node.js and available via NPM.
 
     calmcard("foo*bar", "foo123bar"); // -> true
     calmcard("foo*bar", "foobar"); // -> false
+
+    calmcard("foo?bar", "foo1bar"); // -> true
+    calmcard("foo?bar", "foo123bar"); // -> false
+    calmcard("foo?bar", "foobar"); // -> false
 ```
